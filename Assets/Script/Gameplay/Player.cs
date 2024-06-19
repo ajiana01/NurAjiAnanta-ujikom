@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject foodPrefab;
 
     [SerializeField] private Transform foodShoot;
+
+    [SerializeField] private AudioSource _sfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,16 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
         {
             Instantiate(foodPrefab, foodShoot);
+            _sfx.Play();
         }
+    }
+
+    public void PlayGameOverAnim()
+    {
+        _animator.SetBool("Left", false);
+        _animator.SetBool("Right", false);
+        _animator.SetBool("Shoot", false);
+        _animator.SetBool("Idle", false);
+        _animator.SetBool("GameOver", true);
     }
 }

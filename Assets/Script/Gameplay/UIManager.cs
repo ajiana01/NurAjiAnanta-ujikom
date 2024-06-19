@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] private GameObject pauseUI, gameOverUI;
+    [SerializeField] private Player _player;
     void Start()
     {
         
@@ -24,6 +25,7 @@ public class UIManager : MonoBehaviour
 
     public void OpenGameOverUI()
     {
+        _player.PlayGameOverAnim();
         gameOverUI.SetActive(true);
     }
 }

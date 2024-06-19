@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIMainMenu : MonoBehaviour
 {
     [SerializeField] private Button playButton, exitButton;
+    [SerializeField] private AudioSource _audioSorce;
     void Start()
     {
         playButton.onClick.AddListener(ChangeToGameplay);
@@ -14,11 +15,13 @@ public class UIMainMenu : MonoBehaviour
     }
     void ChangeToGameplay()
     {
+        _audioSorce.Play();
         SceneManager.LoadScene("Gameplay");
     }
 
     void ExitGame()
     {
+        _audioSorce.Play();
         Application.Quit();
     }
 }
