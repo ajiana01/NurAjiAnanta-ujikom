@@ -6,7 +6,7 @@ public class Food : MonoBehaviour
 {
     [SerializeField] private float SpeedFood =300;
 
-    [SerializeField] private float HungerValue = 25;
+    [SerializeField] public float HungerValue = 25;
 
     [SerializeField] private float LifeTime = 3;
 

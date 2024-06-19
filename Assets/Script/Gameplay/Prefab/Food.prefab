@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c524dce4e4a94409a35f64d40ff8eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedFood: 300
+  SpeedFood: 30
   HungerValue: 25
   LifeTime: 3
 --- !u!54 &2724824083292323983
