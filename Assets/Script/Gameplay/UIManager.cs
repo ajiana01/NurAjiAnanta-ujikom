@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    void OpenGameOverUI()
+    public void OpenGameOverUI()
     {
         gameOverUI.SetActive(true);
     }

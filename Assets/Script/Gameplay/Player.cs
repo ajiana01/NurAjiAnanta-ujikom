@@ -9,6 +9,10 @@ public class Player : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
 
     [SerializeField] private float playerSpeed = 30f;
+
+    [SerializeField] private GameObject foodPrefab;
+
+    [SerializeField] private Transform foodShoot;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +22,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         MovementPlayer();
+        ShootFood();
     }
 
     void MovementPlayer()
@@ -42,6 +47,14 @@ public class Player : MonoBehaviour
             _animator.SetBool("Right", false);
             _animator.SetBool("Shoot", false);
             _animator.SetBool("Idle", true);
+        }
+    }
+
+    void ShootFood()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            Instantiate(foodPrefab, foodShoot);
         }
     }
 }
